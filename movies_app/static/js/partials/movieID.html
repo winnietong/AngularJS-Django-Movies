@@ -1,0 +1,32 @@
+<div ng-repeat='title in titles'>
+	<h1>{{title.title}}</h1>
+
+	<div class="container-box">
+	    <img src={{title.poster}}>
+	    <div class="info-box">
+	        <h3>Movie Information:</h3>
+	        <p>Critic Score: {{title.critics_score}},  Audience Score: {{title.audience_score}}</p>
+	        <p>{{title.synopsis}}</p>
+	        <p>Runtime: {{title.runtime}} minutes</p>
+	        <hr>
+	        <h3>Cast</h3>
+	        <div ng-repeat='cast in title.cast'>
+	        	<p>
+	        		{{cast.name}} as 
+		        	<span ng-repeat='character in cast.characters'>
+		        	{{character}}
+		        	</span>
+		        </p>
+	        </div>
+	    </div>
+	</div>
+	<hr>
+	<div class='container'>
+		<h2>Buy tickets</h2>
+		<button ng-click='add_movie(title, "noon");'>Noon</button>
+		<button ng-click='add_movie(title, "2:00 PM");'>2:00 PM</button>
+		<button ng-click='add_movie(title, "5:00 PM");'>5:00 PM</button>
+		<button ng-click='add_movie(title, "10:00 PM");'>10:00 PM</button>
+	</div>
+
+</div>

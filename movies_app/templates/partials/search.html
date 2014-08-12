@@ -1,0 +1,14 @@
+<h1>Search For a Movie</h1>
+<input type="text" ng-model="query" placeholder="Search A Movie!">
+<button type="submit" ng-click='getMovies();'>Search Movie</button>
+
+<input type="text" ng-model="myFilter">
+
+<div class="container-box" ng-click='toggleShow($index);' ng-repeat="title in titles | filter:myFilter track by $index">
+    <img src='{{title.poster}}'>
+    <div class="info-box">
+        <h3>{{title.title}}</h3>
+        <p ng-show='title.showDesc'>Year released: {{title.year}}</p>
+        <p ng-show='title.showDesc'>Runtime: {{title.runtime}} minutes</p>
+    </div>
+</div>

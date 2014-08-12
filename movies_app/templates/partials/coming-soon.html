@@ -1,0 +1,18 @@
+<h1>Coming Soon:</h1>
+<hr>
+
+<div class='filterBox'>
+	<span style="float:right; display: block;">Filter: <input type="text" ng-model="myFilter"></span>
+</div>
+
+<div class="container-box" ng-click='toggleShow($index);' ng-repeat="title in titles | filter:myFilter track by $index">
+    <img src='{{title.poster}}'>
+    <div class="info-box">
+        <h2>
+        	{{title.title}} 
+        	<a class="button" style="float: right;" ng-click="add_favorite(title);">Save Movie</a>
+        </h2>
+        <p>Audience Score: {{title.audience_score}}</p>
+        <p><b>Synopsis:</b> {{title.synopsis}}</p>
+    </div>
+</div>

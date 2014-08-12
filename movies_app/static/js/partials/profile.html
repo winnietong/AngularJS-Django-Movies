@@ -1,0 +1,24 @@
+<h1>Profile</h1>
+<hr>
+<div ng-show="userMovies.length>0" class='container'>
+    <h3>Upcoming Shows</h3>
+    <div ng-repeat='movie in userMovies track by $index'>
+    	<img src='{{movie.poster}}'>
+        <div class="info-box">
+            <h3><a href="#/movie/{{movie.movieID}}">{{movie.title}}</a></h3>
+            <p>Runtime: {{movie.runtime}} minutes</p>
+            <p>Showtime: {{movie.showtime}}</p>
+        </div>
+    </div>
+</div>
+<br>
+<div ng-show="userFavorites.length>0" class='container'>
+    <h3>My favorites</h3>
+    <div ng-repeat='movie in userFavorites track by $index'>
+    	<img src='{{movie.poster}}'>
+        <div class="info-box">
+            <h3>{{movie.title}}</h3>
+            <p>Runtime: {{movie.synopsis}} minutes</p>
+        </div>
+    </div>
+</div>
